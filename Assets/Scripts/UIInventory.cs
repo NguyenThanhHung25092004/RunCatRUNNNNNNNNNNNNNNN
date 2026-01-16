@@ -1,16 +1,19 @@
-using NUnit.Framework;
+﻿// Chọn slot, sync UI
 using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class UIInventory : MonoBehaviour
 {
+    [Header("UI")]
     [SerializeField] private UIInventoryItem itemPrefab;
     [SerializeField] private RectTransform contentPanel;
 
-    List<UIInventoryItem> listOfUIItems = new List<UIInventoryItem>();
+    [Header("Logic")]
+    [SerializeField] private PlayerPowerController playerPower;
+    [SerializeField] private int slotCount = 3;
 
-    public event Action<int> OnInventoryItemSelected;
+    List<UIInventoryItem> listOfUIItems = new List<UIInventoryItem>();
 
     public void InitializeInventoryUI (int inventorySize)
     {
@@ -38,6 +41,5 @@ public class UIInventory : MonoBehaviour
         }
 
         selectedItem.Select();
-        OnInventoryItemSelected?.Invoke(index);
     }
 }

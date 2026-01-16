@@ -1,7 +1,7 @@
+﻿// UI Slot đơn lẻ (Hiển thị icon và border)
 using System;
 using TMPro;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class UIInventoryItem : MonoBehaviour
@@ -10,12 +10,13 @@ public class UIInventoryItem : MonoBehaviour
     [SerializeField] private TMP_Text slotNumberTxT;
     [SerializeField] private Image borderImage;
 
+    private Action onClick;
     private bool empty = true;
-
     public bool IsEmpty => empty;
 
-    private void Awake()
+    public void Initialize(Action onClickAction)
     {
+        onClick = onClickAction;
         ResetData();
         Deselect();
     }
@@ -24,11 +25,6 @@ public class UIInventoryItem : MonoBehaviour
     {
         this.itemImage.gameObject.SetActive(false);
         empty = true;
-    }
-
-    public void Deselect()
-    {
-        this.borderImage.enabled = false;
     }
 
     public void SetData(Sprite sprite, int slotNumber)
@@ -42,5 +38,10 @@ public class UIInventoryItem : MonoBehaviour
     public void Select()
     {
         this.borderImage.enabled = true;
+    }
+
+    public void Deselect()
+    {
+        this.borderImage.enabled = false;
     }
 }
