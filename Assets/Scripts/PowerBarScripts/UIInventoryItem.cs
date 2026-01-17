@@ -21,18 +21,27 @@ public class UIInventoryItem : MonoBehaviour
         Deselect();
     }
 
+    public void OnClick()
+    {
+        onClick?.Invoke();
+    }
+
     public void ResetData()
     {
         this.itemImage.gameObject.SetActive(false);
         empty = true;
     }
 
-    public void SetData(Sprite sprite, int slotNumber)
+    public void SetData(Sprite sprite)
     {
         this.itemImage.gameObject.SetActive(true);
         this.itemImage.sprite = sprite;
-        this.slotNumberTxT.text = slotNumber.ToString();
         empty = false;
+    }
+
+    public void SetSlotNumber(int slotNumber)
+    {
+        slotNumberTxT.text = slotNumber.ToString();
     }
 
     public void Select()
