@@ -36,7 +36,7 @@ public class PlayerPowerController : MonoBehaviour
 
     public bool AddPower(ItemSO power)
     {
-        for (int i = 0; i < startingSlots; i++)
+        for (int i = 0; i < powers.Count; i++)
         {
             if (powers[i] == null)
             {
@@ -63,5 +63,6 @@ public class PlayerPowerController : MonoBehaviour
         Debug.Log($"Using power: {powers[index].name}");
 
         powers[index] = null;
+        OnPowerChanged?.Invoke(index, null);
     }
 }

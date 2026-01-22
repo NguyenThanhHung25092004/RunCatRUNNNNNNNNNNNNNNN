@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 4036794316428922309}
   - component: {fileID: 1818179703313989577}
   - component: {fileID: 822150975071056120}
-  - component: {fileID: 5970756784323694822}
+  - component: {fileID: 2668619920390395772}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -94,6 +94,7 @@ Animator:
   m_WriteDefaultValuesOnDisable: 0
 --- !u!212 &7954965185274467786
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -139,6 +140,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_Sprite: {fileID: -3781910019033479378, guid: d2969c86aaf1bc44da7d1fc5f90f153d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -148,7 +150,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &1514847059853077246
 MonoBehaviour:
@@ -277,7 +278,7 @@ CapsuleCollider2D:
   m_Offset: {x: -0.06, y: -0.26}
   m_Size: {x: 0.5, y: 0.26}
   m_Direction: 1
---- !u!114 &5970756784323694822
+--- !u!114 &2668619920390395772
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -286,8 +287,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 9170976057145362118}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 773f02e7d28c30349acc3f70436b6221, type: 3}
+  m_Script: {fileID: 11500000, guid: 3e999a7e2da7ca849a4e71852df64a7a, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InventoryController
-  inventoryUI: {fileID: 1117425547700014850, guid: 6d1469b3b3c8e384d9a14426af4c8042, type: 3}
-  inventorySize: 3
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerPowerController
+  startingSlots: 3

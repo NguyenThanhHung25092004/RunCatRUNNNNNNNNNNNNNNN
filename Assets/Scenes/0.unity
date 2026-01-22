@@ -623,6 +623,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!483693784 &1015285544
 TilemapRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -668,6 +669,7 @@ TilemapRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -675,7 +677,6 @@ TilemapRenderer:
   m_SortOrder: 0
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
-  m_MaskInteraction: 0
 --- !u!1839735485 &1015285545
 Tilemap:
   m_ObjectHideFlags: 0
@@ -3297,6 +3298,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1511357309}
   m_CullTransparentMesh: 1
+--- !u!1 &1849174878
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1849174880}
+  - component: {fileID: 1849174879}
+  m_Layer: 0
+  m_Name: PowerController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1849174879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849174878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9039f2b046e1b842bbe7089a95957da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PowerBarController
+  playerPower: {fileID: 2021087416}
+  uiInventory: {fileID: 1965908352}
+--- !u!4 &1849174880
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849174878}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 470.44214, y: 146.96547, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1925821862
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3353,7 +3400,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5970756784323694822, guid: d45f1626251830c418ec581d30b2d07f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3424,6 +3472,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2164020488259664869, guid: d45f1626251830c418ec581d30b2d07f, type: 3}
   m_PrefabInstance: {fileID: 1925821862}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2021087416 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2668619920390395772, guid: d45f1626251830c418ec581d30b2d07f, type: 3}
+  m_PrefabInstance: {fileID: 1925821862}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e999a7e2da7ca849a4e71852df64a7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerPowerController
 --- !u!1 &2128031111
 GameObject:
   m_ObjectHideFlags: 0
@@ -3539,6 +3598,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1511357310}
     m_Modifications:
+    - target: {fileID: 2043937320418454343, guid: 6d1469b3b3c8e384d9a14426af4c8042, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6227537757366349353, guid: 6d1469b3b3c8e384d9a14426af4c8042, type: 3}
       propertyPath: m_Name
       value: Inventory
@@ -3647,6 +3710,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8440850246069213483, guid: 6d1469b3b3c8e384d9a14426af4c8042, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3664,3 +3731,4 @@ SceneRoots:
   - {fileID: 1925821862}
   - {fileID: 167112370}
   - {fileID: 751260955}
+  - {fileID: 1849174880}
