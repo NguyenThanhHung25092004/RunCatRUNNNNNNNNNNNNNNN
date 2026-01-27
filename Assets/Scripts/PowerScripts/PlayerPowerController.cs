@@ -57,11 +57,16 @@ public class PlayerPowerController : MonoBehaviour
     public void UsePower(int index)
     {
         if (index < 0 || index >= powers.Count) return;
-        if (powers[index] == null) return;
-        // Logic power ở đây 
+
+        ItemSO power = powers[index];
+        if (power == null) return;
+
+        // Activate Power
+        power.Activate(this);
 
         Debug.Log($"Using power: {powers[index].name}");
-
+        
+        // Update Power UI
         powers[index] = null;
         OnPowerChanged?.Invoke(index, null);
     }
